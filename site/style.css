@@ -1,372 +1,373 @@
-body {
-  font-size: 16px;
-  color: #fff;
-  background-color: #61122f;
-  font-family: 'Oxygen', sans-serif;
+/*STYLE.CSS */
+
+/*********************************
+COLORS
+black: #000000
+darker grey: #222222
+dark grey: #333333;
+grey: #444444;
+light grey: #eeeeee
+light blue: #00c0ff;
+dark blue: #0090bf;
+
+************************************/
+
+/*********************************
+GENERAL STYLES
+************************************/
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/** HEADER **/
-#header-nav {
-  background-color: #f6b319;
-  border-radius: 0;
-  border: 0;
+body{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #444444;
 }
 
-#logo-img {
-  background: url('../images/restaurant-logo_large.png') no-repeat;
-  width: 150px;
-  height: 150px;
-  margin: 10px 15px 10px 0;
+/*********************************
+TYPPOGRAPHY
+************************************/
+h1, h2, h3 {
+  font-weight: 300;
+  margin: 0;
+  line-height: 45px;
 }
 
-.navbar-brand {
-  padding-top: 25px;
-}
-.navbar-brand h1 { /* Restaurant name */
-  font-family: 'Lora', serif;
-  color: #557c3e;
-  font-size: 1.5em;
-  text-transform: uppercase;
+h4, h5, h6 {
   font-weight: bold;
-  text-shadow: 1px 1px 1px #222;
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: .75;
+  margin: 5px 0 5px 0;
 }
-.navbar-brand a:hover, .navbar-brand a:focus {
-  text-decoration: none;
+
+h1 {
+  font-size: 48px;
 }
-.navbar-brand p { /* Kosher cert */
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+h5 {
+  font-size: 13px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0 0 10px 0;
+}
+
+p.lead {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+/*********************************
+LAYOUT
+************************************/
+.container {
+  width: 940px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+header {
+  background: #000;
+}
+
+#logo {
+  display: block;
+  padding: 17px 0 16px 5px;
+  float: left;
+}
+
+#hero {
+  background: #00c0ff;
   color: #000;
-  text-transform: uppercase;
-  font-size: .7em;
-  margin-top: 15px;
-}
-.navbar-brand p span { /* Star-K */
-  vertical-align: middle;
 }
 
-#nav-list {
-  margin-top: 10px;
-}
-#nav-list a {
-  color: #951C49;
-  text-align: center;
-}
-#nav-list a:hover {
-  background: #E7E7E7;
-}
-#nav-list a span {
-  font-size: 1.8em;
+#hero-title {
+  width: 520px;
+  padding: 60px 0;
+  float: left;
 }
 
-#phone {
-  margin-top: 5px;
-}
-#phone a { /* Phone number */
-  text-align: right;
-  padding-bottom: 0;
-}
-#phone div { /* We Deliver */
-  color: #557c3e;
-  text-align: right;
-  padding-right: 15px;
+#call-to-action {
+  margin: 40px 0;
 }
 
-.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
-  border: 1px solid #61122f;
-}
-.navbar-header button.navbar-toggle {
-  clear: both;
-  margin-top: -30px;
-}
-/* END HEADER */
-
-/* FOOTER */
-.panel-footer {
-  margin-top: 30px;
-  padding-top: 35px;
-  padding-bottom: 30px;
-  background-color: #222;
-  border-top: 0;
-}
-.panel-footer div.row {
-  margin-bottom: 35px;
-}
-#hours, #address {
-  line-height: 2;
-}
-#hours > span, #address > span {
-  font-size: 1.3em;
-}
-#address p {
-  color: #557c3e;
-  font-size: .8em;
-  line-height: 1.8;
-}
-#testimonials {
-  font-style: italic;
-}
-#testimonials p:nth-child(2) {
-  margin-top: 25px;
-}
-/* END FOOTER */
-
-
-
-/* HOME PAGE */
-.container .jumbotron {
-  box-shadow: 0 0 50px #3F0C1F;
-  border: 2px solid #3F0C1F;
+#hero-image {
+  float: right;
+  margin: 10px 0 -30px 0;
 }
 
-#menu-tile, #specials-tile, #map-tile {
-  height: 250px;
-  width: 100%;
-  margin-bottom: 15px;
-  position: relative;
-  border: 2px solid #3F0C1F;
-  overflow: hidden;
+.lead-in {
+  margin-bottom: 30px;
 }
-#menu-tile:hover, #specials-tile:hover, #map-tile:hover {
-  box-shadow: 0 1px 5px 1px #cccccc;
+
+#content {
+  padding: 100px 0;
 }
-#menu-tile {
-  background: url('../images/menu-tile.jpg') no-repeat;
-  background-position: center;
+
+#column-content {
+  width: 700px;
+  float: left;
 }
-#specials-tile {
-  background: url('../images/specials-tile.jpg') no-repeat;
-  background-position: center;
-}
-#menu-tile span, #specials-tile span, #map-tile span {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.6em;
-  text-transform: uppercase;
-  background-color: #000;
+
+/*********************************
+SIDEBAR
+************************************/
+
+aside {
+  background: #444;
+  width: 160px;
   color: #fff;
-  opacity: .8;
-}
-/* END HOME PAGE */
-
-/* MENU CATEGORIES PAGE */
-.category-tile { 
-  position: relative;
-  border: 2px solid #3F0C1F;
-  overflow: hidden;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 15px;
-}
-.category-tile span {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.2em;
-  text-transform: uppercase;
-  background-color: #000;
-  color: #fff;
-  opacity: .8;
-}
-.category-tile:hover {
-  box-shadow: 0 1px 5px 1px #cccccc;
+  float: left;
+  margin-left: 20px;
+  padding: 30px;
+  font-size: 12px;
+  line-height: 18px;
 }
 
-#menu-categories-title + div {
-  margin-bottom: 50px;
+aside .widget {
+  margin: 10px 0;
 }
-/* END MENU CATEGORIES PAGE */
 
-/* SINGLE CATEGORY PAGE */
-.menu-item-tile {
-  margin-bottom: 25px;
+aside .widget:nth-child(2) {
+  margin-top: 40px;
 }
-.menu-item-tile hr {
-  width: 80%;
-}
-.menu-item-tile .menu-item-price {
-  font-size: 1.1em;
-  text-align: right;
-  margin-top: -15px;
-  margin-right: -15px;
-}
-.menu-item-tile .menu-item-price span {
-  font-size: .6em;
-}
-.menu-item-photo {
-  position: relative;
-  border: 2px solid #3F0C1F; 
-  overflow: hidden;
-  padding: 0;
-  margin-right: -15px;
-  margin-left: auto;
-  margin-bottom: 20px;
-  max-width: 250px;
-}
-.menu-item-photo div {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 80px;
-  background-color: #557c3e;
-  text-align: center;
-}
-.menu-item-description {
-  padding-right: 30px;
-}
-h3.menu-item-title {
+
+aside .widget h4 {
+  font-weight: 200;
+  font-size: 20px;
   margin: 0 0 10px;
 }
-.menu-item-details {
-  font-size: .9em;
-  font-style: italic;
-}
-/* END SINGLE CATEGORY PAGE */
 
-
-/********** Large devices only **********/
-@media (min-width: 1200px) {
-  .container .jumbotron {
-    background: url('../images/jumbotron_1200.jpg') no-repeat;
-    height: 675px;
-  }
+aside .socials a {
+  position: relative;
+  margin-right: 5px;
 }
 
-/********** Medium devices only **********/
-@media (min-width: 992px) and (max-width: 1199px) {
-  /* Header */
-  #logo-img {
-    background: url('../images/restaurant-logo_medium.png') no-repeat;
-    width: 100px;
-    height: 100px;
-    margin: 5px 5px 5px 0;
-  }
-  /* End Header */
-
-  /* Home Page */
-  .container .jumbotron {
-    background: url('../images/jumbotron_992.jpg') no-repeat;
-    height: 558px;
-  }
-  /* End Home Page */
-}
-
-/********** Small devices only **********/
-@media (min-width: 768px) and (max-width: 991px) {
-  /* Home Page */
-  .container .jumbotron {
-    background: url('../images/jumbotron_768.jpg') no-repeat;
-    height: 432px;
-  }
-  /* End Home Page */
-}
-
-/********** Extra small devices only **********/
-@media (max-width: 767px) {
-  /* Header */
-  .navbar-brand {
-    padding-top: 10px;
-    height: 80px;
-  }
-  .navbar-brand h1 { /* Restaurant name */
-    padding-top: 10px;
-    font-size: 5vw; /* 1vw = 1% of viewport width */
-  }
-  .navbar-brand p { /* Kosher cert */
-    font-size: .6em;
-    margin-top: 12px;
-  }
-  .navbar-brand p img { /* Star-K */
-    height: 20px;
-  }
-
-  #collapsable-nav a { /* Collapsed nav menu text */
-    font-size: 1.2em;
-  }
-  #collapsable-nav a span { /* Collapsed nav menu glyph */
-    font-size: 1em;
-    margin-right: 5px;
-  }
-
-  #call-btn > a {
-    font-size: 1.5em;
-    display: block;
-    margin: 0 20px;
-    padding: 10px;
-    border: 2px solid #fff;
-    background-color: #f6b319;
-    color: #951c49;
-  }
-  #xs-deliver {
-    margin-top: 5px;
-    font-size: .7em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-  }
-  /* End Header */
-
-  /* Footer */
-  .panel-footer section {
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  .panel-footer section:nth-child(3) {
-    margin-bottom: 0; /* margin already exists on the whole row */
-  }
-  .panel-footer section hr {
-    width: 50%;
-  }
-  /* End Footer */
-
-  /* Home Page */
-  .container .jumbotron {
-    margin-top: 30px;
-    padding: 0;
-  }
-  #menu-tile, #specials-tile {
-    width: 360px;
-    margin: 0 auto 15px;
-  }
-
-  .menu-item-photo {
-    margin-right: auto;
-  }
-  .menu-item-tile .menu-item-price {
-    text-align: center;
-  }
-  .menu-item-description {
-    text-align: center;;
-  }
+aside .socials a:hover {
+  top: -1px;
 }
 
 
-/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
-@media (max-width: 479px) {
-  /* Header */
-  .navbar-brand h1 { /* Restaurant name */
-    padding-top: 5px;
-    font-size: 6vw;
-  }
-  /* End Header */
-  
-  /* Home page */
-  #menu-tile, #specials-tile {
-    width: 280px;
-    margin: 0 auto 15px;
-  }
+/*********************************
+SECONDARY call-to-action
+************************************/
 
-  .col-xxs-12 {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    float: left;
-    width: 100%;
-  }
+#secondary-cta {
+  background: #eee;
+  padding: 30px 0;
+}
+
+#secondary-cta h4 {
+  font-weight: 200;
+  font-size: 24px;
+  float: left;
+}
+
+#secondary-cta form {
+  margin: 0;
+  float: right;
+}
+
+/*********************************
+FOOTER
+************************************/
+footer {
+  background: #444;
+  color: #fff;
+  padding: 50px 0;
+}
+
+footer #copyright {
+  width: 280px;
+  float: left;
+}
+
+footer nav {
+  width: 340px;
+  float: right;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer nav a {
+  margin: 0 0 0 15px;
+}
+
+footer a:hover {
+  color: #00c0ff;
+}
+
+
+/*********************************
+NAVIGATION
+************************************/
+nav ul {
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+nav ul li {
+  list-style: none;
+  float: left;
+}
+
+header nav ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 20px;
+  border-left: solid 1px #333;
+}
+
+header nav ul li a:hover {
+  background: #222;
+}
+
+header nav ul li a:active {
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.8) inset;
+     -moz-box-shadow: 0 0 5px rgba(0,0,0,0.8) inset;
+          box-shadow: 0 0 5px rgba(0,0,0,0.8) inset;
+
+}
+/*********************************
+BUTTONS
+************************************/
+
+.btn {
+  width: auto;
+  background: #0090bf;
+  border: 1px solid #1e728c;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+
+  /*IE7 inline-block fix*/
+  zoom: 1;
+  *display:inline;
+
+  margin: 0;
+  outline: none;
+  padding: 10px 20px 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+
+/*FANCY BOXY SHADOWS*/
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+     -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+
+/*CSS3 transitions*/
+  -webkit-transition: background-color 0.15s ease-in-out;
+     -moz-transition: background-color 0.15s ease-in-out;
+       -o-transition: background-color 0.15s ease-in-out;
+          transition: background-color 0.15s ease-in-out;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #0086b2;
+}
+
+.btn:active {
+  -webkit-box-shadow: 0 1px  0 rgba(0, 0, 0, 0.2) inset;
+     -moz-box-shadow: 0 1px  0 rgba(0, 0, 0, 0.2) inset;
+          box-shadow: 0 1px  0 rgba(0, 0, 0, 0.2) inset;
+  color: #fff;
+}
+
+.btn-large {
+  padding: 20px 30px;
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.btn-secondary {
+  font-size: 20px;
+}
+
+.btn-small {
+  font-weight: bold;
+}
+
+.btn-secondary, .btn-secondary:hover, .btn-secondary:active {
+  background: none;
+  border: none;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-secondary:hover {
+  text-decoration: underline;
+}
+
+.btn-secondary:active {
+  position: relative;
+  top: 1px;
+}
+/*********************************
+GLOBAL STYLES
+************************************/
+
+input {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+input[type="text"], input[type="email"]{
+  position: relative;
+  padding: 11px 10px;
+  border: solid 1px #ccc;
+  width: 220px;
+  margin: 0 -5px 0 0;
+}
+
+.column {
+  float: left;
+  margin-right: 20px;
+}
+
+.four {
+  width: 220px;
+}
+
+.last {
+  margin-right: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1; /*for IE6/7 trigger hasLayout*/
 }
