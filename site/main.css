@@ -1,4 +1,3 @@
-
 body {
     font-family: monospace;
 }
@@ -41,10 +40,6 @@ li {
 }
 body {
     background: var(--bg);
-}
-.btn {
-  color: var(--btnFontColor);
-  background-color: var(--btnBg);
 }
 .btn {
   position: absolute;
