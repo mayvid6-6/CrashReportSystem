@@ -1,5 +1,14 @@
+:root {
+  --green: #00FF00;
+  --white: #ffffff;
+  --black: #000000;
+}
+* {
+  color: var(--fontColor);
+  font-family: helvetica;
+}
 body {
-    font-family: monospace;
+    background: var(--bg);
 }
 
 ul {
@@ -28,18 +37,6 @@ li {
   --fontColor: var(--green);
   --btnBg: var(--white);
   --btnFontColor: var(--black);
-}
-:root {
-  --green: #00FF00;
-  --white: #ffffff;
-  --black: #000000;
-}
-* {
-  color: var(--fontColor);
-  font-family: helvetica;
-}
-body {
-    background: var(--bg);
 }
 .btn {
   position: absolute;
