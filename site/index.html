@@ -1,128 +1,19 @@
- <!DOCTYPE html>
- <html>
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    <title>My Website</title>
-    <link rel="stylesheet" href="styles/normalize.css" media="screen" title="no title">
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple website</title>
+    <link rel="stylesheet" href="main.css">
   </head>
-  <body>
-
-    <header>
-
-      <div class="container clearfix">
-        <a href="#" title="Return to Home" id="logo">
-          <img src="images/logo.gif" alt="Logo" />
-        </a>
-
-        <nav>
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Services</a></li>
-            <li><a href="">Contact</a></li>
-          </ul>
-        </nav>
-      </div> <!--end container-->
-
-
-      <div id="hero">
-        <div class="container clearfix">
-
-          <div id="hero-title">
-
-            <h1>Really big title 2.0</h1>
-            <h2>Simple, yet engaging and descriptive subtitle</h2>
-
-            <div id="call-to-action">
-              <a href="#" class="btn btn-large">Primary call to  action</a>
-              <a href="#" class="btn btn-secondary">Secondary action</a>
-            </div><!--end call-to-action -->
-
-          </div><!-- end hero-title -->
-
-          <img src="images/computer.png" alt="Large Desktop Computer" id="hero-image" />
-
-        </div><!-- end container-->
-
-      </div><!-- end hero -->
-
-    </header>
-
-
-
-    <div id="content" class="container clearfix">
-      <section id="column-content">
-
-        <div class="lead-in">
-          <h3>PSD to HTML5 &amp; CSS3</h3>
-          <p class="lead">Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-        </div><!--end lead-in -->
-
-        <div class="column four">
-          <img src="images/puppy.jpg" alt="A cute puppy looking into the camera" />
-          <h4>A Cute Puppy!</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-        </div><!-- end column -->
-        <div class="column four">
-          <img src="images/crazy_dog.jpg" alt="A crazy dog playing in the leaves" />
-          <h4>A Crazy Dog!</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-        </div><!-- end column -->
-        <div class="column four last">
-          <img src="images/husky.jpg" alt="A beautiful husky dog staring off into the distance" />
-          <h4>A Husky Dog!</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-        </div><!-- end column -->
-      </section><!-- end column content -->
-
-      <aside>
-        <div class="widget">
-          <h4>Latest News</h4>
-          <h5>Dec 31, 2012</h5>
-          <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div><!-- end widget -->
-
-        <div class="widget socials">
-          <h4>Follow us</h4>
-          <a href="https://twitter.com/tonylucio01/" target="_blank"><img src="images/social_twitter.gif" alt="Follow us on Twitter" /></a>
-          <a href="https://www.facebook.com/tonylucio01/" target="_blank"><img src="images/social_facebook.gif" alt="Follow us on Facebook" /></a>
-          <a href="https://www.youtube.com/" target="_blank"><img src="images/social_youtube.gif" alt="Follow us on Youtube" /></a>
-        </div><!-- end widget -->
-
-      </aside>
-
-    </div><!-- end content -->
-
-    <div id="secondary-cta">
-      <div class="container clearfix">
-        <h4>Keep up to date with the latest news from our company</h4>
-
-        <form>
-          <input type="email" placeholder="Enter your email here">
-          <input type="submit" class="btn btn-small" value="Sign up">
-        </form>
-      </div><!--end container-->
-
-    </div><!-- end of  secocndary-cta -->
-
-    <footer>
-      <div class="container clearfix">
-        <p id="copyright">Copyright &copy; 2016 Company Name</p>
-
-        <nav>
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Services</a></li>
-            <li><a href="">Contact</a></li>
-          </ul>
-        </nav>
-      </div><!--end container-->
-
-    </footer>
-
+  <body class="light-theme">
+    <h1>Task List</h1>
+    <p id="msg">Current tasks:</p>
+    <ul>
+      <li class="list">Add visual styles</li>
+      <li class="list">Add light and dark themes</li>
+      <li>Enable switching the theme</li>
+    </ul>
   </body>
-
- </html>
-  
+</html>
