@@ -1,5 +1,6 @@
 import argparse
 from contextlib import nullcontext
+from distutils.util import copydir_run_2to3
 from glob import glob
 from io import TextIOWrapper, BufferedRWPair
 from serial import Serial
@@ -13,6 +14,17 @@ from datetime import datetime
 import os
 import twilio
 from twilio.rest import Client
+import csv
+import phonenumbers
+from phonenumbers import geocoder as gc
+from opencage.geocoder import OpenCageGeocode
+
+# Track Phone using Number
+
+number = phonenumbers.parse('+15713830830')
+key = '151375cccb7b4b48bd8cb3bb5b0c8ddd';
+
+
 
 
 # Find your Account SID and Auth Token at twilio.com/console
@@ -20,8 +32,23 @@ from twilio.rest import Client
 account_sid = "ACcf29a9e7cbbe84e458313189eef744ca"
 auth_token = "53c4db238bfdf94fb7a9c564c85ead5b"
 client = Client(account_sid, auth_token)
-
-
+global count2 
+count2=0
+global lat
+global lng
+while count2<1:
+            yourLocation = gc.description_for_number(number, 'en')
+    
+            geocoder = OpenCageGeocode(key)
+    
+            query = str(yourLocation)
+    
+            results = geocoder.geocode(query)
+            count2+=1
+            lat = results[0]['geometry']['lat']
+            lng = results[0]['geometry']['lng']
+        
+            break 
 
 f = open('Data.csv', 'w')
 writer = csv.writer(f)
@@ -30,11 +57,12 @@ writer = csv.writer(f)
 φ_prev=-999999
 accb=-999999 
 time = 0
-place="New York"
 
 
-threshold = 10;
+
+threshold = 5;
 count=0;
+place="New York"
 def get_arduino_port():
     return next(port.device for port in comports() if "Arduino" in port.description)
 
@@ -206,7 +234,10 @@ class Spinner(Entity):
 
         current_time = now.strftime("%H:%M:%S")
         """save temp in a csv file with the time"""
-        writeList=[ψ_raw, θ_raw, φ_raw, temp, acc,current_time]
+        
+        
+        
+        writeList=[ψ_raw, θ_raw, φ_raw, temp, acc,current_time,lat,lng]
 
 
         

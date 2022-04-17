@@ -1,9 +1,9 @@
-#include <Arduino.h>
+ #include <Arduino.h>
 #include <Wire.h>
-
+int actualTemp=0;
 const int MPU_addr = 0x68; // I2C address of the MPU-6050
 int16_t AcX, AcY, AcZ, Tmp, GyX, GyY, GyZ;
-float psi = 0, theta = 0, phi = 0, psiAdjust = 0, thetaAdjust = 0, phiAdjust = 0;
+float psi = 0, theta = 0, phi = 0, psiAdjust = 0, thetaAdjust = 0, phiAdjust = 0,acc=0;
 
 const int baud               = 9600,
           sampleRate         = 8000,
@@ -28,6 +28,9 @@ void read() {
     psi   += GyX * sampleTime - psiAdjust;
     theta += GyY * sampleTime - thetaAdjust;
     phi   += GyZ * sampleTime - phiAdjust;
+    acc=abs(AcX)+abs(AcY)+abs(AcZ);
+    
+    
 }
 
 void calibrate(const int samples) {
@@ -73,6 +76,8 @@ void setup() {
 
 void loop() {
     read();
-    Serial.println(psi +d+ theta +d+ phi);
+    actualTemp=(Tmp/340.00)+36.53;
+    acc=(abs(acc)/3);
+    Serial.println(psi +d+ theta +d+ phi+d+actualTemp+d+acc);
     delay(sampleTime);
 }
