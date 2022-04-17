@@ -1,15 +1,31 @@
-"use strict";
+var input = document.getElementById('input-file')
+var handsontableContainer = document.getElementById('handsontable-container')
 
-const switcher = document.querySelector(".btn");
+input.onchange = function () {
+  var file = this.files[0]
+  var reader = new FileReader()
 
-switcher   .addEventListener("click", function () {
-  document.body.classList.toggle("dark-theme");
+  reader.onload = function (e) {
+    var csv = e.target.result
+    var data = Papa.parse(csv, {
+      header: true,
+      skipEmptyLines: true
+    })
 
-  var className = document.body.className;
-  if (className == "light-theme") {
-    this.textContent = "Dark";
-  } else {
-    this.textContent = "Light";
+    // reset container
+    handsontableContainer.innerHTML = ''
+    handsontableContainer.className = ''
+    
+
+    Handsontable(handsontableContainer, {
+      data: data.data,
+      rowHeaders: true,
+      colHeaders: data.meta.fields,
+      columnSorting: true,
+      width: '100%',
+      licenseKey: 'non-commercial-and-evaluation',
+    })
   }
-  console.log("current class name: " + className);
-});
+
+  file && reader.readAsText(file)
+}
