@@ -18,15 +18,10 @@ from twilio.rest import Client
 # Find your Account SID and Auth Token at twilio.com/console
 # and set the environment variables. See http://twil.io/secure
 account_sid = "ACcf29a9e7cbbe84e458313189eef744ca"
-auth_token = "04eff2d3d480ffdcfc5b3d1605a489e6"
+auth_token = "53c4db238bfdf94fb7a9c564c85ead5b"
 client = Client(account_sid, auth_token)
 
-message = client.messages \
-                .create(
-                     body="We have detected that you are not moving your head. Please check your head position and try again.",
-                     from_='+19853045931',
-                     to='+15713830830'
-                 )
+
 
 f = open('Data.csv', 'w')
 writer = csv.writer(f)
@@ -68,7 +63,7 @@ parser.add_argument("--ready-flag", "-f",
     help    = "any unique part of the serial output string that signals the that the device is done calibrating (default: pitch)",
     default = "pitch"
 )
-def is_spike(ψ, θ, φ, ψb, θb, φb,acc,accb,list):
+def is_spike(ψ, θ, φ, ψb, θb, φb,acc,accb,list,temp, time, place):
     
 
 
@@ -80,8 +75,39 @@ def is_spike(ψ, θ, φ, ψb, θb, φb,acc,accb,list):
         return False
     elif(abs(ψb-ψ)>threshold or abs(θb-θ)>threshold or abs(φb-φ)>threshold or abs(acc-accb)>thresholdSpeed):
         count+=1
-        if(count>20):
-            print(message.sid)
+        if(count>30):
+            if((abs(ψb-ψ)>threshold or abs(θb-θ)>threshold or abs(φb-φ)>threshold) and temp<100):
+                message2 = client.messages \
+                 .create(
+                      body="We have detected a crash at " + place + " " + time + ". The vehicle has flipped over. The vehicle is a --- model ---. ---person--- is the owner of the vehicle, they have the following health conditions: --- health condition ---.",
+                      from_='+19853045931',
+                      to='+15713830830'
+                  )
+                
+
+            elif(temp>100 and (abs(ψb-ψ)<threshold and abs(θb-θ)<threshold and abs(φb-φ)<threshold)):
+                 message3 = client.messages \
+                 .create(
+                      body="We have detected a crash at " + place + " " + time + ". The vehicle is currently on fire. The vehicle is a --- model ---. ---person--- is the owner of the vehicle, they have the following health conditions: --- health condition ---.",
+                      from_='+19853045931',
+                      to='+15713830830'
+                  )
+                 
+            elif(temp>100 and (abs(ψb-ψ)>threshold or abs(θb-θ)>threshold or abs(φb-φ)>threshold)):
+                 message4 = client.messages \
+                 .create(
+                      body="We have detected a crash at " + place + " " + time + ". The vehicle has flipped over and is currently on fire. The vehicle is a --- model ---. ---person--- is the owner of the vehicle, they have the following health conditions: --- health condition ---.",
+                      from_='+19853045931',
+                      to='+15713830830'
+                  )
+                 
+            else:
+                message1 = client.messages \
+                 .create(
+                      body="We have detected a crash at " + place + " " + time + ". Nothing notable has happened in the crash. The vehicle is a --- model ---. ---person--- is the owner of the vehicle, they have the following health conditions: --- health condition ---.",
+                      from_='+19853045931',
+                      to="+15713830830"
+                  )
             list.append("SPIKE")
             writer.writerow(list)
             return True
@@ -202,7 +228,7 @@ class Spinner(Entity):
         
         
        
-        if(is_spike(ψ, θ, φ, ψ_prev, θ_prev, φ_prev,acc,accb,writeList)):
+        if(is_spike(ψ, θ, φ, ψ_prev, θ_prev, φ_prev,acc,accb,writeList, temp, current_time, place)):
             print("QUIT")
             sys.exit()
 
