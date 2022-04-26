@@ -1,66 +1,39 @@
 :root {
-    --white: #ffffff;
-    --black: #000000;
-    --gray: #303030;
-  }
-  * {
-    color: var(--fontColor);
-    font-family: helvetica;
-  }
-  body {
-    background: var(--bg);
-  }
-  #nav-bar {
-    background-color: #303030;
-    position: float; /* Set the navbar to fixed position */
-    top: 0;
-    width: 100%;
-  }
-  
-  header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    background-color: black;
-    list-style: none;
-    padding: 0.5em;
-    margin: 0;
-  }
-  li {
-    font-family: Arial, San Serif;
-    margin: 0;
-  }
-  li a {
-    font-weight: bold;
-    color: white;
-    margin: 2em;
-  }
-  ul {
-    font-family: helvetica;
-  }
-  li {
-    list-style: circle;
-  }
-  
-  .list {
-    list-style: square;
-  }
-  
-  #msg {
-    font-family: monospace;
-  }
-  .light-theme {
-    --bg: var(--grey);
-    --fontColor: var(--black);
-    --btnBg: var(--black);
-    --btnFontColor: var(--white);
-  }
-  
-  .dark-theme {
-    --bg: var(--black);
-    --fontColor: var(--grey);
-    --btnBg: var(--white);
-    --btnFontColor: var(--black);
-  }
-  
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #303030;
+}
+* {
+  color: var(--fontColor);
+  font-family: helvetica;
+}
+body {
+  background: var(--bg);
+}
+#nav-bar {
+  background-color: white;
+  position: float; /* Set the navbar to fixed position */
+  top: 0;
+  width: 100%;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: lightblue;
+  list-style: none;
+  padding: 0.3em;
+  margin: 0;
+}
+li {
+  font-family: San Serif;
+  margin: 0;
+}
+
+
+li {
+  list-style-type: none;
+}
+
