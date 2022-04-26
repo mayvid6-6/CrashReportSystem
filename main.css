@@ -1,0 +1,39 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #303030;
+}
+* {
+  color: var(--fontColor);
+  font-family: helvetica;
+}
+body {
+  background: var(--bg);
+}
+#nav-bar {
+  background-color: white;
+  position: float; /* Set the navbar to fixed position */
+  top: 0;
+  width: 100%;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: lightblue;
+  list-style: none;
+  padding: 0.3em;
+  margin: 0;
+}
+li {
+  font-family: San Serif;
+  margin: 0;
+}
+
+
+li {
+  list-style-type: none;
+}
+
